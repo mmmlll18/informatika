@@ -1,17 +1,21 @@
 # Начало лабороторной работы 
-Установка VirtualBox
-<img width="937" height="985" alt="image" src="https://github.com/user-attachments/assets/b92fc84e-5ba2-40c9-a224-8283404d402f" />
+- Установка VirtualBox
+
+- Была создана виртуальная машина А с операционной системой Ubuntu. Для проверки доступа в сеть Интернет выполнена команда ping google.com. Получены ответы от удалённого узла, что подтверждает корректную настройку сетевого подключения. Также, Машина А уже имеет доступ к интернету, но для работы с сетью виртуальных машин необходимо добавить второй адаптер к хостовой сети
+ <img width="770" height="224" alt="image" src="https://github.com/user-attachments/assets/b3baabe1-f753-45e2-96cd-50c89e7d3e3b" />
+<img width="681" height="217" alt="image" src="https://github.com/user-attachments/assets/46bfef91-1735-4b96-8315-08e12bef19cb" />
+Доступ есть, узнаем адреса сети 
+<img width="336" height="70" alt="image" src="https://github.com/user-attachments/assets/a4bf98d0-c4d3-4de2-b858-929b5b161286" />
 
 
-<img width="1040" height="562" alt="image" src="https://github.com/user-attachments/assets/d978b6b5-4444-48a1-a7d6-2fea7023821a" />
-Была создана виртуальная машина А с операционной системой Ubuntu. Для проверки доступа в сеть Интернет выполнена команда ping google.com. Получены ответы от удалённого узла, что подтверждает корректную настройку сетевого подключения.
+- Далее, были созданы виртуальные машины Б и B с операционной системой Ubuntu. Параметры виртуальной машины аналогичны машине А: 2 виртуальных процессора, 2048 МБ оперативной памяти и виртуальный диск объёмом 25 ГБ. Проверяем, что все работает
 
-Были созданы виртуальные машины Б и С с операционной системой Ubuntu. Параметры виртуальной машины аналогичны машине А: 2 виртуальных процессора, 2048 МБ оперативной памяти и виртуальный диск объёмом 25 ГБ.
+<img width="753" height="285" alt="image" src="https://github.com/user-attachments/assets/f33639b7-da1d-46ee-8128-13cba27f295f" />
+<img width="760" height="252" alt="image" src="https://github.com/user-attachments/assets/a0595fbc-a876-4a25-a082-6730adeae14b" />
 
-<img width="934" height="871" alt="image" src="https://github.com/user-attachments/assets/ba94a421-4d75-4d9c-8e03-5221748de9dc" />
-
-Теперь работа с сетью. 
-<img width="489" height="580" alt="image" src="https://github.com/user-attachments/assets/9aa30235-aa27-44ba-baa3-da2eef96fa31" />
-
- <img width="1120" height="594" alt="image" src="https://github.com/user-attachments/assets/10226827-dce2-40b6-9a22-a1b6ac97d4ea" />
-Для обеспечения доступа в Интернет машина А использует режим NAT. Для взаимодействия между виртуальными машинами дополнительно настроен виртуальный адаптер Host-Only.
+- Теперь по заданию необходимо запретить доступ машины Б к машине В можно использовать инструмент настройки фаервола iptables. Пояснение команды: -A означает добавление нового правила в фаервол;
+-  OUTPUT - исходящие пакеты;
+-   -d - адрес машины, в которую посылаются пакеты;
+-    -j - действие, которое должно быть выполнено при передаче пакета по указанному адресу;
+-    DROP - отмена отправки пакета без возвращения ошибки.
+  <img width="838" height="214" alt="image" src="https://github.com/user-attachments/assets/6b5d88c3-b370-4d29-8589-6cf59fc00052" />
